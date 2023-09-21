@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI, Response
 
 # I like to launch directly and not use the standard FastAPI startup
@@ -17,7 +18,10 @@ async def root():
 
 @app.get("/hello/{name}")
 async def say_hello(name: str):
-    return {"message": f"Awesome cloud developer gk2648 says hello {name}"}
+    return {
+        "message": f"Hello{name}",
+        "sender":f"Gal Kedem"
+    }
 
 
 @app.get("/hello_text/{name}")
